@@ -13,7 +13,7 @@ const MainMenu: React.FC = () => {
     return (
         <div className = "main-menu">
 
-            <div className = { `menu-content ${ isOpen ? "blurred" : "" }` }> // Content that will be blurred when the menu is open
+            <div className = { `menu-content ${ isOpen ? "blurred" : "" }` }>
 
                 <h1>Main Website Content</h1>
 
@@ -29,10 +29,12 @@ const MainMenu: React.FC = () => {
 
                         <button className = "close-button" onClick = { closeMenu }>X</button>
 
-                        <h2>Welcome!</h2>
-                        <p>Kerbal Flight Computer</p>
-                        <p>Version 1.0.0</p>
-
+                        <div className = "popup-title">
+                            <h2>Welcome!</h2>
+                            <p>Kerbal Flight Computer</p>
+                            <p>Version 1.0.0</p>
+                        </div>
+                        
                         <div className = "dropdownSelections">
 
                             <div>
@@ -76,15 +78,13 @@ const MainMenu: React.FC = () => {
                             <p><strong>Special Thanks To:</strong></p>
 
                             <ul>
-
                                 <li>Person 1 for x</li>
                                 <li>Person 2 for y</li>
-
                             </ul>
 
                         </div>
 
-                        <button className = "start-button" onClick = { closeMenu }> //Button to exit popup menu
+                        <button className = "start-button" onClick = { closeMenu }>
                             Get Started!
                         </button>
 
