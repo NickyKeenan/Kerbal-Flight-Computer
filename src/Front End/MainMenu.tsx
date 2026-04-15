@@ -6,6 +6,4 @@
 //  - Displays references, credits, libraries used, etc.
 
 import React, { useState } from 'react';
-import { FilePond } from 'react-filepond';
-
-
+import "./MainMenu.css";
