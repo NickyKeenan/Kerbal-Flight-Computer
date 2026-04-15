@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./Front End/App.tsx";
+import MainMenu from "./Front End/MainMenu";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    <MainMenu />
   </React.StrictMode>
 );

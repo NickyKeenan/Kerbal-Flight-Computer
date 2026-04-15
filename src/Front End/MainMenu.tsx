@@ -1,46 +1,39 @@
-//Main menu of the website, contains a popup menu that:
-//  - Welcomes the user
-//  - Allows the user to select a language
-//  - Allows the user to select a theme (light/dark)
-//  - Explains how to use the website
-//  - Displays references, credits, libraries used, etc.
 
 import React, { useState } from 'react';
 import "./MainMenu.css";
 
 const MainMenu: React.FC = () => {
 
-    const [ isOpen, setIsOpen ] = useState ( true ); // State to track whether the menu is open or closed
+    const [ isOpen, setIsOpen ] = useState ( true );
 
-    const closeMenu = () => { // Close the menu when the user clicks the close button
+    const closeMenu = () => {
         setIsOpen ( false );
     };
 
     return (
-        <div className = "main-menu"> // Main container for the menu and content
+        <div className = "main-menu">
 
             <div className = { `menu-content ${ isOpen ? "blurred" : "" }` }> // Content that will be blurred when the menu is open
 
-                <h1>Main Website Content</h1> //placeholder content
+                <h1>Main Website Content</h1>
 
                 <p>What is in the website after exiting the menu</p>
 
             </div>
 
-            //Code for the popup startup menu
-            { isOpen && ( // Render the menu only if it is open
+            { isOpen && ( 
 
-                <div className = "overlay"> // Container for the popup menu
+                <div className = "overlay"> 
 
-                    <div className = "popup-menu"> // The popup menu itself
+                    <div className = "popup-menu">
 
-                        <button className = "close-button" onClick = { closeMenu }>X</button> // Button to close the menu
+                        <button className = "close-button" onClick = { closeMenu }>X</button>
 
                         <h2>Welcome!</h2>
                         <p>Kerbal Flight Computer</p>
                         <p>Version 1.0.0</p>
 
-                        <div className = "dropdownSelections"> // Container for the dropdown selections
+                        <div className = "dropdownSelections">
 
                             <div>
 
@@ -71,14 +64,14 @@ const MainMenu: React.FC = () => {
                         
                         </div>
 
-                        <div className = "links"> // Container for the links to the documentation, credits, etc.
+                        <div className = "links"> 
 
                             <button className = "link-button">How To Use</button>
                             <button className = "link-button">How It Works</button>
 
                         </div>
 
-                        <div className = "references"> // Container for the references, credits, etc.
+                        <div className = "references"> 
 
                             <p><strong>Special Thanks To:</strong></p>
 

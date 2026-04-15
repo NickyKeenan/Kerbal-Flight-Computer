@@ -14,7 +14,7 @@
 }
 
 /* Background content */
-.content {
+.menu-content {
 
     padding: 40px;
     transition: filter 0.3s ease;
@@ -43,7 +43,7 @@
 }
 
 /*Popup box */
-.popup {
+.popup-menu {
 
     background-color: #2e2e2e;
     padding: 25px;
@@ -55,7 +55,7 @@
 }
 
 /*Close button */
-.close-btn {
+.close-button {
 
     position: absolute;
     top: 10px;
@@ -69,7 +69,7 @@
 }
 
 /*Dropdown Section */
-.selectors {
+.dropdownSelections {
 
     display: flex;
     justify-content: space-between;
@@ -94,7 +94,7 @@ select {
 
 }
 
-.link-btn {
+.link-button {
 
     background: none;
     border: none;
@@ -103,7 +103,7 @@ select {
 
 }
 
-.link-btn:hover {
+.link-button:hover {
 
     color: white;
 
@@ -119,7 +119,7 @@ select {
 }
 
 /* Start button */
-.start-btn {
+.start-button {
 
     margin-top: 10px;
     padding: 10px 20px;
@@ -131,7 +131,7 @@ select {
 
 }
 
-.start-btn:hover {
+.start-button:hover {
 
     background-color: #777;
 
