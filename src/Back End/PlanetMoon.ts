@@ -39,7 +39,10 @@ export class PlanetMoon {
     soiExitVelocity!: number;
     synchronousOrbit!: number;
     color!: string;
-    orbiting!: string
+    orbiting!: string;
+    argumentOfPeriapsis!: number;
+    longitudeOfAscendingNode!: number;
+    meanAnomaly!: number;
 
 
     //constructor
@@ -63,6 +66,9 @@ export class PlanetMoon {
         synchronousOrbit: number;
         color: string;
         orbiting: string
+        argumentOfPeriapsis: number;
+        longitudeOfAscendingNode: number;
+        meanAnomaly: number;
 
     } ) {
         
