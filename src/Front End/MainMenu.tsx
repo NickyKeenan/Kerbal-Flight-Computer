@@ -1,6 +1,9 @@
 
 import React, { useState } from 'react';
 import "./MainMenu.css";
+import Visualizer from './Visualizer';
+
+console.log("main menu loaded");
 
 const MainMenu: React.FC = () => {
 
@@ -15,9 +18,9 @@ const MainMenu: React.FC = () => {
 
             <div className = { `menu-content ${ isOpen ? "blurred" : "" }` }>
 
-                <h1>Main Website Content</h1>
-
-                <p>What is in the website after exiting the menu</p>
+                <div className = "visualizer-container">
+                    <Visualizer />
+                </div>
 
             </div>
 
@@ -34,7 +37,7 @@ const MainMenu: React.FC = () => {
                             <p>Kerbal Flight Computer</p>
                             <p>Version 1.0.0</p>
                         </div>
-                        
+
                         <div className = "dropdownSelections">
 
                             <div>
