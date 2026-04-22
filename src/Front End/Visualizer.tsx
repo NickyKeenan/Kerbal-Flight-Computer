@@ -96,10 +96,22 @@ const Visualizer: React.FC = () => {
 
     return (
 
-        <Canvas camera={{ position: [0, 200, 0], up: [0, 0, -1] }}>
+        <Canvas camera={{ position: [200, 120, 200] }}>
             <ambientLight intensity={0.4} />
             <pointLight position={[0, 0, 0]} intensity={2} />
-            <OrbitControls maxPolarAngle = { Math.PI / 2 } minPolarAngle = { Math.PI / 2 } />
+            <OrbitControls 
+            
+                target = {[0, 0, 0]}
+
+                minPolarAngle = {0}
+                maxPolarAngle = {Math.PI}
+
+                enableDamping
+                dampingFactor = {0.05}
+                zoomSpeed = {0.6}
+                zoomToCursor = {true}
+            
+            />
 
             {kerbol && (
 
