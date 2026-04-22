@@ -3,27 +3,44 @@
 //manuever path of the ship
 
 import React, {useRef} from "react";
+import { useFrame } from "@react-three/fiber"
 import {Canvas} from "@react-three/fiber";
-import {OrbitControls} from "@react-three/drei";
+import {Line, OrbitControls} from "@react-three/drei";
 import {planetsMoons} from "../Back End/PlanetData";
 
 const SCALE_RADIUS = 1e-6
 const SCALE_DISTANCE = 1e-9
 
-const OrbitRing = ( { radius }: { radius: number } ) => {
+const OrbitRing = ( { radius, color }: { radius: number; color: string } ) => {
 
-        return (
+    const points: [number, number, number][] = [];
+    const segments = 128;
 
-            <mesh rotation = { [ -Math.PI / 2, 0, 0 ] } >
+    for ( let i = 0; i <= segments; i++ ) {
 
-                <ringGeometry args={[radius - 0.2, radius + 0.2, 64]} />
-                <meshBasicMaterial color="white" side={2} />
+        const angle = ( i / segments ) * Math.PI * 2;
 
-            </mesh>
+        points.push ([
 
-        );
+            Math.cos(angle) * radius, 0, Math.sin(angle) * radius
 
-    };
+        ])
+
+    }
+
+    return (
+
+        <Line
+
+            points={points}
+            color = {color}
+            lineWidth = {1}
+
+        />
+
+    );
+
+};
 
 const Visualizer: React.FC = () => {
 
@@ -63,12 +80,12 @@ const Visualizer: React.FC = () => {
 
                     <React.Fragment key = { body.id }>
 
-                        <OrbitRing radius = { distance }/>
+                        <OrbitRing radius = { distance } color = {body.color}/>
 
                         <mesh position = { [ x, 0, z ] }>
 
                             <sphereGeometry args={[radius, 16, 16]} />
-                            <meshStandardMaterial color = {body.hasOxygen ? "cyan" : "gray"} />
+                            <meshStandardMaterial color = {body.color} />
 
                         </mesh>
 

@@ -38,6 +38,7 @@ export class PlanetMoon {
     apoapsis!: number;
     soiExitVelocity!: number;
     synchronousOrbit!: number;
+    color!: string;
 
     //constructor
     constructor( data: {
@@ -58,6 +59,7 @@ export class PlanetMoon {
         apoapsis: number;
         soiExitVelocity: number;
         synchronousOrbit: number;
+        color: string;
 
     } ) {
         
