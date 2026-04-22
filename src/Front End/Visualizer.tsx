@@ -59,17 +59,9 @@ const Visualizer: React.FC = () => {
             const t = timeRef.current;
             const period = body.siderealOrbitalPeriod;
 
-            //if ( !period || period <= 0 ) return;
             const safePeriod = period && period > 0 ? period: 1;
             
             const angle = ( t / safePeriod ) * Math.PI * 2;
-
-            // const x = Math.cos ( angle ) * distance;
-            // const z = Math.sin ( angle ) * distance;
-
-            // if ( meshRef.current ) {
-            //     meshRef.current?.position.set ( x, 0, z );
-            // }
 
             meshRef.current?.position.set(
 
@@ -141,13 +133,6 @@ const Visualizer: React.FC = () => {
 
                         <OrbitRing radius = { distance } color = {body.color}/>
                         <Planet_Moon body = { body } distance = { distance }/>
-
-                        {/* <mesh position = { [ x, 0, z ] }>
-
-                            <sphereGeometry args={[radius, 16, 16]} />
-                            <meshStandardMaterial color = {body.color} />
-
-                        </mesh> */}
 
                     </React.Fragment>
 
