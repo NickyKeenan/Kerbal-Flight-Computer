@@ -4,6 +4,7 @@
 
 import React, {useRef} from "react";
 import { useFrame } from "@react-three/fiber"
+import * as THREE from "three";
 import {Canvas} from "@react-three/fiber";
 import {Line, OrbitControls} from "@react-three/drei";
 import {planetsMoons} from "../Back End/PlanetData";
@@ -47,12 +48,69 @@ const Visualizer: React.FC = () => {
     const kerbol = planetsMoons.find( p => p.name === "Kerbol" );
     const bodies = planetsMoons.filter( p => p.name !== "Kerbol" );
 
+    const Planet_Moon = ( { body, distance }: any ) => {
+
+        const meshRef = useRef<THREE.Mesh | null>(null);
+
+        const timeRef = useRef ( 0 );
+
+        useFrame ( ( _, delta ) => {
+
+            const t = timeRef.current;
+            const period = body.siderealOrbitalPeriod;
+
+            //if ( !period || period <= 0 ) return;
+            const safePeriod = period && period > 0 ? period: 1;
+            
+            const angle = ( t / safePeriod ) * Math.PI * 2;
+
+            // const x = Math.cos ( angle ) * distance;
+            // const z = Math.sin ( angle ) * distance;
+
+            // if ( meshRef.current ) {
+            //     meshRef.current?.position.set ( x, 0, z );
+            // }
+
+            meshRef.current?.position.set(
+
+                Math.cos ( angle ) * distance,
+                0,
+                Math.sin ( angle ) * distance
+
+            );
+
+        } );
+
+        return (
+
+            <mesh ref = { meshRef }>
+
+                <sphereGeometry args = { [ 1.5, 16, 16 ] }/>
+                <meshStandardMaterial color = { body.color }/>
+
+            </mesh>
+
+        );
+
+    };
+
     return (
 
         <Canvas camera={{ position: [0, 200, 0], up: [0, 0, -1] }}>
             <ambientLight intensity={0.4} />
             <pointLight position={[0, 0, 0]} intensity={2} />
             <OrbitControls maxPolarAngle = { Math.PI / 2 } minPolarAngle = { Math.PI / 2 } />
+
+            {kerbol && (
+
+                    <mesh position = { [ 0,0,0 ] }>
+
+                        <sphereGeometry args={[5, 32, 32]} />
+                        <meshBasicMaterial color = "yellow"/>
+
+                    </mesh>
+
+                )}
 
             {planetsMoons.map((body, i) => {
 
@@ -65,29 +123,19 @@ const Visualizer: React.FC = () => {
                 const x = Math.cos(angle) * distance;
                 const z = Math.sin(angle) * distance;
 
-                {kerbol && (
-
-                    <mesh position = { [ 0,0,0 ] }>
-
-                        <sphereGeometry args={[5, 32, 32]} />
-                        <meshBasicMaterial color = "yellow"/>
-
-                    </mesh>
-
-                )}
-
                 return (
 
                     <React.Fragment key = { body.id }>
 
                         <OrbitRing radius = { distance } color = {body.color}/>
+                        <Planet_Moon body = { body } distance = { distance }/>
 
-                        <mesh position = { [ x, 0, z ] }>
+                        {/* <mesh position = { [ x, 0, z ] }>
 
                             <sphereGeometry args={[radius, 16, 16]} />
                             <meshStandardMaterial color = {body.color} />
 
-                        </mesh>
+                        </mesh> */}
 
                     </React.Fragment>
 
