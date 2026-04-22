@@ -37,7 +37,8 @@ export const planetsMoons: PlanetMoon[] = [
             apoapsis: 0,
             soiExitVelocity: 0,
             synchronousOrbit: 0,
-            color: "#ffcc00"
+            color: "#ffcc00",
+            orbiting: "Kerbol"
         }
     ),
 
@@ -60,7 +61,8 @@ export const planetsMoons: PlanetMoon[] = [
             apoapsis: 6315765980.5,
             soiExitVelocity: 1161.4107926294,
             synchronousOrbit: 0,
-            color: "#888888"
+            color: "#888888",
+            orbiting: "Kerbol"
 
         }
     ),
@@ -83,7 +85,8 @@ export const planetsMoons: PlanetMoon[] = [
             apoapsis: 9931011387.2,
             soiExitVelocity: 4831.956193395,
             synchronousOrbit: 10328.472087012,
-            color: "#a84bd6"
+            color: "#a84bd6",
+            orbiting: "Kerbol"
 
         }
     ),
@@ -106,7 +109,8 @@ export const planetsMoons: PlanetMoon[] = [
             apoapsis: 13599840256,
             soiExitVelocity: 3431.034829319,
             synchronousOrbit: 2863.3340594888,
-            color: "#4da6ff"
+            color: "#4da6ff",
+            orbiting: "Kerbol"
 
         }
     ),
@@ -129,7 +133,8 @@ export const planetsMoons: PlanetMoon[] = [
             apoapsis: 21783189162.7,
             soiExitVelocity: 1372.413958995,
             synchronousOrbit: 2879.9999101376,
-            color: "#c1440e"
+            color: "#c1440e",
+            orbiting: "Kerbol"
 
         }
     ),
@@ -152,7 +157,8 @@ export const planetsMoons: PlanetMoon[] = [
             apoapsis: 46761053692.4,
             soiExitVelocity: 558.0048386887,
             synchronousOrbit: 732.24443996802,
-            color: "#aaaaaa"
+            color: "#aaaaaa",
+            orbiting: "Kerbol"
 
         }
     ),
@@ -175,7 +181,8 @@ export const planetsMoons: PlanetMoon[] = [
             apoapsis: 72212238387.2,
             soiExitVelocity: 9704.4320494984,
             synchronousOrbit: 15010.461350651,
-            color: "#ff9933"
+            color: "#ff9933",
+            orbiting: "Kerbol"
 
         }
     ),
@@ -198,7 +205,8 @@ export const planetsMoons: PlanetMoon[] = [
             apoapsis: 113549713200,
             soiExitVelocity: 841.82802523268,
             synchronousOrbit: 683.69089065809,
-            color: "gray"
+            color: "gray",
+            orbiting: "Kerbol"
 
         }
     ),
@@ -223,7 +231,8 @@ export const planetsMoons: PlanetMoon[] = [
             apoapsis: 48825000.4,
             soiExitVelocity: 35.711342336781,
             synchronousOrbit: 42.13815091369,
-            color: "gray"
+            color: "gray",
+            orbiting: "Eve"
         }
     ),
     
@@ -245,7 +254,8 @@ export const planetsMoons: PlanetMoon[] = [
             apoapsis: 12000000,
             soiExitVelocity: 807.08362342932,
             synchronousOrbit: 0,
-            color: "gray"
+            color: "gray",
+            orbiting: "Kerbin"
         }
     ),
     
@@ -267,7 +277,8 @@ export const planetsMoons: PlanetMoon[] = [
             apoapsis: 47000000,
             soiExitVelocity: 242.61080123746,
             synchronousOrbit: 357.9408652496,
-            color: "gray"
+            color: "gray",
+            orbiting: "Kerbin"
         }
     ),
     
@@ -289,7 +300,8 @@ export const planetsMoons: PlanetMoon[] = [
             apoapsis: 3296000,
             soiExitVelocity: 534.47844560618,
             synchronousOrbit: 0,
-            color: "gray"
+            color: "gray",
+            orbiting: "Duna"
         }
     ),
     
@@ -311,7 +323,8 @@ export const planetsMoons: PlanetMoon[] = [
             apoapsis: 27184000,
             soiExitVelocity: 2801.4282280552,
             synchronousOrbit: 0,
-            color: "gray"
+            color: "gray",
+            orbiting: "Jool"
         }
     ),
     
@@ -333,7 +346,8 @@ export const planetsMoons: PlanetMoon[] = [
             apoapsis: 43152000,
             soiExitVelocity: 1176.0994840963,
             synchronousOrbit: 0,
-            color: "gray"
+            color: "gray",
+            orbiting: "Jool"
         }
     ),
     
@@ -355,7 +369,8 @@ export const planetsMoons: PlanetMoon[] = [
             apoapsis: 68500000,
             soiExitVelocity: 3068.8108674751,
             synchronousOrbit: 0,
-            color: "gray"
+            color: "gray",
+            orbiting: "Jool"
         }
     ),
     
@@ -377,7 +392,8 @@ export const planetsMoons: PlanetMoon[] = [
             apoapsis: 158697499.9,
             soiExitVelocity: 276.61886828214,
             synchronousOrbit: 0,
-            color: "gray"
+            color: "gray",
+            orbiting: "Jool"
         }
     ),
     
@@ -399,7 +415,8 @@ export const planetsMoons: PlanetMoon[] = [
             apoapsis: 210624206.5,
             soiExitVelocity: 181.12051236676,
             synchronousOrbit: 0,
-            color: "gray"
+            color: "gray",
+            orbiting: "Jool"
         }
     ),
 

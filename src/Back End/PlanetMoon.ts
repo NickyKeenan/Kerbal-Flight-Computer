@@ -39,6 +39,8 @@ export class PlanetMoon {
     soiExitVelocity!: number;
     synchronousOrbit!: number;
     color!: string;
+    orbiting!: string
+
 
     //constructor
     constructor( data: {
@@ -60,6 +62,7 @@ export class PlanetMoon {
         soiExitVelocity: number;
         synchronousOrbit: number;
         color: string;
+        orbiting: string
 
     } ) {
         
