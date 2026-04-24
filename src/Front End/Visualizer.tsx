@@ -6,7 +6,7 @@ import React, {useRef} from "react";
 import { useFrame } from "@react-three/fiber"
 import * as THREE from "three";
 import {Canvas} from "@react-three/fiber";
-import {Line, OrbitControls, Stars} from "@react-three/drei";
+import {Line, OrbitControls, Stars, Html} from "@react-three/drei";
 import {planetsMoons} from "../Back End/PlanetData";
 
 const SCALE_RADIUS = 1e-6
@@ -126,6 +126,7 @@ const OrbitPath = ({ body, bodyMap }: any) => {
 const Visualizer: React.FC = () => {
 
     const kerbol = planetsMoons.find( p => p.name === "Kerbol" );
+    const [hoveredBody, setHoveredBody] = React.useState<any>(null);
     const bodies = planetsMoons.filter( p => p.name !== "Kerbol" );
 
     const bodyMap = new Map(planetsMoons.map(b => [b.name, b]));
@@ -154,7 +155,7 @@ const Visualizer: React.FC = () => {
 };
 
 
-    const Planet_Moon = ( { body, distance, bodyMap }: any ) => {
+    const Planet_Moon = ( { body, distance, bodyMap, hoveredBody, setHoveredBody }: any ) => {
 
         const meshRef = useRef<THREE.Mesh | null>(null);
 
@@ -223,10 +224,51 @@ const Visualizer: React.FC = () => {
 
         return (
 
-            <mesh ref = { meshRef }>
+            <mesh 
+                ref = { meshRef }
+                
+                onPointerOver = { ( e ) => {
+
+                    e.stopPropagation();
+                    setHoveredBody ( body );
+
+                } }
+
+                onPointerOut = { () => {
+
+                    setHoveredBody ( null );
+
+                } }
+                
+                >
 
                 <sphereGeometry args = { [ 1.5, 16, 16 ] }/>
                 <meshStandardMaterial color = { body.color }/>
+
+                { hoveredBody?.id === body.id && (
+
+                    <Html distanceFactor = { 10 }>
+
+                        <div
+                            style = {{
+
+                                color: "white",
+                                background: "rgba(0,0,0,0.7)",
+                                padding: "4px 8px",
+                                borderRadius: "6px",
+                                fontSize: "50px",
+                                whiteSpace: "nowrap",
+
+                            }}
+                        >
+
+                            { body.name }
+
+                        </div>
+
+                    </Html>
+
+                ) }
 
             </mesh>
 
@@ -296,6 +338,8 @@ const Visualizer: React.FC = () => {
                             body = { body } 
                             distance = { distance }
                             bodyMap={bodyMap}
+                            hoveredBody = {hoveredBody}
+                            setHoveredBody = {setHoveredBody}
                             
                         />
 
