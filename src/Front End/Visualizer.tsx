@@ -6,7 +6,7 @@ import React, {useRef} from "react";
 import { useFrame } from "@react-three/fiber"
 import * as THREE from "three";
 import {Canvas} from "@react-three/fiber";
-import {Line, OrbitControls} from "@react-three/drei";
+import {Line, OrbitControls, Stars} from "@react-three/drei";
 import {planetsMoons} from "../Back End/PlanetData";
 
 const SCALE_RADIUS = 1e-6
@@ -237,6 +237,17 @@ const Visualizer: React.FC = () => {
     return (
 
         <Canvas camera={{ position: [200, 120, 200] }}>
+
+            <Stars
+                radius = {300} //size of starfield
+                depth = {60}
+                count = {2000}
+                factor = {4} //size of stars
+                saturation = {0}
+                fade
+                speed = {0}
+            />
+
             <ambientLight intensity={0.4} />
             <pointLight position={[0, 0, 0]} intensity={2} />
             <OrbitControls 
